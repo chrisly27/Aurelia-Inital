@@ -1,0 +1,31 @@
+.myElement {
+    width:100px;
+    height: 100px;
+    border:1px solid blue;
+ }
+ 
+ .myAnimation-add {
+    -webkit-animation: changeBack 3s;
+    animation: changeBack 3s;
+ }
+ 
+ .myAnimation-remove {
+    -webkit-animation: fadeIn 3s;
+    animation: fadeIn 3s;
+ }
+ 
+ @-webkit-keyframes changeBack {
+    0% { background-color: #e6efff; }
+    25% { background-color: #4d91ff; }
+    50% { background-color: #0058e6; }
+    75% { background-color: #003180; }
+    100% { background-color: #000a1a; }
+ }
+ 
+ @keyframes changeBack {
+    0% { background-color: #000a1a; }
+    25% { background-color: #003180; }
+    50% { background-color: #0058e6; }
+    75% { background-color: #4d91ff; }
+    100% { background-color: #e6efff; }
+ }

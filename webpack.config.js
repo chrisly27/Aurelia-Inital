@@ -74,7 +74,6 @@ module.exports = ({ production } = {}, {extractCss, analyze, tests, hmr, port, h
         //   priority: 90,
         //   enforce: true
         // },
-
         // This is the HTTP/1.1 optimised cacheGroup configuration
         vendors: { // picks up everything from node_modules as long as the sum of node modules is larger than minSize
           test: /[\\/]node_modules[\\/]/,

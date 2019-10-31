@@ -27,5 +27,7 @@
     "host": "localhost",
     "output": "dist"
   },
+
+  
   "packageManager": "yarn"
 }
