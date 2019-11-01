@@ -1,15 +1,23 @@
-import {CssAnimator} from 'aurelia-animator-css';
+import {DialogService} from 'aurelia-dialog';
 import {inject} from 'aurelia-framework';
+import {Prompt} from './components/modal/my-modal';
 
-@inject(CssAnimator, Element)
+@inject(DialogService)
+
 export class App {
-  constructor(animator, element) {
-    this.animator = animator;
-    this.element = element;
+  constructor(dialogService) {
+    this.dialogService = dialogService;
   }
+  openModal() {
+    this.dialogService.open( {viewModel: Prompt, model: 'Are you sure?' }).then(response => {
+      console.log(response);
 
-  animateElement() {
-    let myElement = this.element.querySelector('.myElement');
-    this.animator.animate(myElement, 'myAnimation');
+      if (!response.wasCancelled) {
+        console.log('OK');
+      } else {
+        console.log('cancelled');
+      }
+      console.log(response.output);
+    });
   }
 }
